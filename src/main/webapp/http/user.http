@@ -1,0 +1,10 @@
+POST http://localhost:8080/Task_Management_System_war_exploded/Register
+
+Content Type: application/json
+
+{
+"username" : "amir satari",
+"password" : "etfgseg"
+}
+
+
