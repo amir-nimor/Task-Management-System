@@ -1,0 +1,15 @@
+Phase 2: Login and Logout
+Implement login and logout functionality.
+Requirements:
+3
+• Users must be able to log in using their username and password.
+• Verify the submitted password against the stored password hash.
+• Create a server-side Session after successful login.
+• Store the user's ID and username in the Session.
+• Display the logged-in user's username on the main page.
+• The user must remain logged in while the Session is valid in the same browser.
+• When the user logs out, invalidate the Session.
+Endpoints:
+Method Endpoint Description
+POST /login Log in
+POST /logout Log out

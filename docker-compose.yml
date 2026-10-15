@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: taskmanager
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "Nima.s.1"
+    ports:
+      - "5439:5432"
+    volumes:
+      - cinema_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d cinema_db" ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  cinema_pgdata:

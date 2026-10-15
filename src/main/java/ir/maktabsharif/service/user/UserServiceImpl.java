@@ -10,25 +10,26 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class UserServiceImpl implements UserService {
 
     private UserRepositoryImpl userRepository;
     private UserCommand command;
 
-    public UserServiceImpl(UserRepositoryImpl userRepository){
+    public UserServiceImpl(UserRepositoryImpl userRepository) {
         this.userRepository = userRepository;
         this.command = new UserCommand();
     }
 
     @Override
     public UserResponseDto save(UserRequestDto userRequestDto) {
-      try {
-          String hashPassword = BCrypt.hashpw(userRequestDto.getPassword(),BCrypt.gensalt());
-          userRequestDto.setPassword(hashPassword);
-          return command.DaoToDtoResponse(userRepository.create(command.DtoRequestToDao(userRequestDto)));
-      } catch (RuntimeException e) {
-          throw new RuntimeException(e);
-      }
+        try {
+            String hashPassword = BCrypt.hashpw(userRequestDto.getPassword(), BCrypt.gensalt());
+            userRequestDto.setPassword(hashPassword);
+            return command.DaoToDtoResponse(userRepository.create(command.DtoRequestToDao(userRequestDto)));
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -73,7 +74,7 @@ public class UserServiceImpl implements UserService {
             return userDaos.stream()
                     .map(u -> command.DaoToDtoResponse(u))
                     .toList();
-        }catch (RuntimeException e) {
+        } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
     }
