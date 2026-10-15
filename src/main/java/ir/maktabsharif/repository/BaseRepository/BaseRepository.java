@@ -1,6 +1,6 @@
 package ir.maktabsharif.repository.BaseRepository;
 
-import ir.maktabsharif.model.BaseModel;
+import ir.maktabsharif.dao.BaseModel;
 
 import java.util.List;
 

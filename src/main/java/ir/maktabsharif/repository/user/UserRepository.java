@@ -1,4 +1,7 @@
 package ir.maktabsharif.repository.user;
 
-public interface UserRepository {
+import ir.maktabsharif.dao.UserDao;
+import ir.maktabsharif.repository.BaseRepository.BaseRepository;
+
+public interface UserRepository extends BaseRepository<UserDao,Integer> {
 }

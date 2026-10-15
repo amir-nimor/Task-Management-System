@@ -1,7 +1,8 @@
 package ir.maktabsharif.exception;
 
-public class EntityNotFound extends RuntimeException {
-  public EntityNotFound(String message) {
-    super(message);
-  }
+public class EntityNotFound extends RuntimeException
+{
+    public EntityNotFound(String message) {
+        super(message);
+    }
 }

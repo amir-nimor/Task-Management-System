@@ -1,9 +1,11 @@
 package ir.maktabsharif.repository.BaseRepository;
 
-import ir.maktabsharif.exception.HibernateException;
+
+
+import ir.maktabsharif.dao.BaseModel;
 import ir.maktabsharif.exception.RepositoryException;
-import ir.maktabsharif.model.BaseModel;
 import ir.maktabsharif.util.HibernateUtil;
+import org.hibernate.HibernateException;
 
 import java.util.List;
 
