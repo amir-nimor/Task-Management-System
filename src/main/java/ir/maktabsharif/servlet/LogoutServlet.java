@@ -1,4 +1,5 @@
 package ir.maktabsharif.servlet;
 
-public class LogOutServlet {
+public class LogoutServlet {
+    
 }
