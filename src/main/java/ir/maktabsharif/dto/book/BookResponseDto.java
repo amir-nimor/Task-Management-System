@@ -1,4 +1,4 @@
-package ir.maktabsharif.dto.task;
+package ir.maktabsharif.dto.book;
 
 import lombok.*;
 
@@ -10,16 +10,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class TaskResponseDto {
+public class BookResponseDto {
 
 
     private Integer id;
     private String title;
-
-    private String description;
-
-
-    private LocalDateTime creatAt;
-
-    private Integer userId;
+    private String author;
+    private String publicationYear;
 }

@@ -1,9 +1,7 @@
-package ir.maktabsharif.dto.task;
+package ir.maktabsharif.dto.book;
 
 import ir.maktabsharif.dao.UserDao;
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -11,14 +9,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @ToString
-public class TaskRequestDto {
+public class BookRequestDto {
 
 
     private String title;
-
-    private String description;
-
-    private UserDao userDao;
+    private String author;
+    private String publicationYear;
 
 
 }
