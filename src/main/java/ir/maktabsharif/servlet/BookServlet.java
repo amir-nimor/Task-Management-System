@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @WebServlet(name = "BokServlet",value = "/api/books/*")
 public class BookServlet extends HttpServlet {
@@ -32,7 +33,6 @@ public class BookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String path = req.getPathInfo();
 
         List<BookResponseDto> bookResponseDtos = bookService.findAll();
 
@@ -56,5 +56,32 @@ public class BookServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         this.objectMapper.writeValue(resp.getWriter(),bookResponseDto);
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String path = req.getPathInfo();
+
+        Integer id;
+
+        if (Optional.ofNullable(path).isEmpty() || !path.matches("/\\d+")){
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        id = Integer.parseInt(path.substring(1));
+
+        BookRequestDto bookRequestDto = objectMapper.readValue(req.getReader(), BookRequestDto.class);
+        bookRequestDto.setId(id);
+
+        BookResponseDto bookResponseDto = bookService.update(bookRequestDto);
+
+        objectMapper.writeValue(resp.getWriter(),bookResponseDto);
+
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doDelete(req, resp);
     }
 }

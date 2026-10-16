@@ -11,6 +11,7 @@ import lombok.*;
 @ToString
 public class UserRequestDto {
 
+    private Integer id;
 
     private String username;
 
