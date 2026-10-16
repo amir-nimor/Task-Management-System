@@ -6,7 +6,7 @@
     <persistence-unit name="Task">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>ir.maktabsharif.dao.TaskDao</class>
+        <class>ir.maktabsharif.dao.BookDao</class>
         <class>ir.maktabsharif.dao.UserDao</class>
 
 

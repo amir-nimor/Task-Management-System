@@ -1,17 +1,17 @@
 package ir.maktabsharif.command;
 
-import ir.maktabsharif.dao.TaskDao;
+import ir.maktabsharif.dao.BookDao;
 import ir.maktabsharif.dto.task.TaskRequestDto;
 import ir.maktabsharif.dto.task.TaskResponseDto;
 
-public class TaskCommand implements Commandable<TaskDao,TaskRequestDto,TaskResponseDto> {
+public class TaskCommand implements Commandable<BookDao,TaskRequestDto,TaskResponseDto> {
 
 
 
 
     @Override
-    public TaskDao DtoRequestToDao(TaskRequestDto taskRequestDto) {
-                return TaskDao.builder()
+    public BookDao DtoRequestToDao(TaskRequestDto taskRequestDto) {
+                return BookDao.builder()
                 .title(taskRequestDto.getTitle())
                 .userDao(taskRequestDto.getUserDao())
                 .description(taskRequestDto.getDescription())
@@ -19,12 +19,12 @@ public class TaskCommand implements Commandable<TaskDao,TaskRequestDto,TaskRespo
     }
 
     @Override
-    public TaskResponseDto DaoToDtoResponse(TaskDao taskDao) {
+    public TaskResponseDto DaoToDtoResponse(BookDao bookDao) {
         return TaskResponseDto.builder()
-                .title(taskDao.getTitle())
-                .description(taskDao.getDescription())
-                .creatAt(taskDao.getCreatAt())
-                .userId(taskDao.getId())
+                .title(bookDao.getTitle())
+                .description(bookDao.getDescription())
+                .creatAt(bookDao.getCreatAt())
+                .userId(bookDao.getId())
                 .build();
     }
 

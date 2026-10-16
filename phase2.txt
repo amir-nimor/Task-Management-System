@@ -1,0 +1,27 @@
+Library Management System
+
+(User Registration, Login, and Book Management)
+In this exercise, you will develop a simple library management system. Users can register, log in,
+view books, add new books, update existing books, and delete books.
+System Requirements
+
+User
+• id
+• username
+• password
+
+Book
+• id
+• title
+• author
+• publicationYear
+
+Phase 1: User Registration
+Implement user registration.
+Endpoint: POST /users
+Phase 2: Login and Logout
+Implement login and logout using a server-side Session.
+Endpoints:
+• POST /login
+• POST /logout
+
