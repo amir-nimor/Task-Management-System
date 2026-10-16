@@ -1,7 +1,6 @@
 package ir.maktabsharif.repository.BaseRepository;
 
 
-
 import ir.maktabsharif.dao.BaseModel;
 import ir.maktabsharif.exception.RepositoryException;
 import ir.maktabsharif.util.HibernateUtil;

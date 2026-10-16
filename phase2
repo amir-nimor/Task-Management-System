@@ -13,3 +13,38 @@ Endpoints:
 Method Endpoint Description
 POST /login Log in
 POST /logout Log out
+
+Phase 3: Adding and Viewing Books
+
+Implement functionality for adding and viewing books. Only logged-in users can add books.
+Endpoints:
+• POST /api/books — Add a book
+• GET /api/books — Get all books
+Use Java record types for DTOs and return book information as JSON.
+
+Phase 4: Updating and Deleting Books
+
+Implement functionality for updating and deleting a specific book using its ID.
+Endpoints:
+• PUT /api/books/{id} — Update a book
+• DELETE /api/books/{id} — Delete a book
+If the specified book does not exist, return an appropriate response.
+
+Phase 5: Filters, Cookies, and Frontend
+
+Part A: Filters
+• Implement an Encoding Filter to set the character encoding to UTF-8.
+• Implement a Logging Filter that logs messages before and after each request.
+• Configure the Filters in web.xml to demonstrate Filter Chaining and execution order.
+
+Part B: Cookies
+After login, create a Cookie containing the username.
+Endpoint: GET /api/username
+Read the username from the Cookie and return it as JSON. Do not read it from the Session or
+request parameters.
+
+Part C: Frontend
+Create a simple HTML page to manage books.
+• Use Fetch API to communicate with the backend.
+• Use JavaScript event listeners to handle user actions.
+• Display the list of books and the results of adding, updating, and deleting books.

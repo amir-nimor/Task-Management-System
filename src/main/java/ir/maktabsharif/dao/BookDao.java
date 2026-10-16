@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 import lombok.*;
 
 @Entity
-@Table(name = "Tasks")
+@Table(name = "books")
 @Getter
 @Setter
 @Builder

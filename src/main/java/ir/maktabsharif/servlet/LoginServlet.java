@@ -12,6 +12,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "Login", value = "/login")
 public class LoginServlet extends HttpServlet {
@@ -46,8 +47,6 @@ public class LoginServlet extends HttpServlet {
 
         Cookie cookie = new Cookie("username", userResponseDto.getUsername());
         resp.addCookie(cookie);
-
         resp.sendRedirect("/profile");
     }
-
 }
